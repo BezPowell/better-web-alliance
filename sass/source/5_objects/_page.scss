@@ -1,0 +1,52 @@
+//Body Colours
+body {
+  background-color: var(--background-colour);
+  color: var(--text-colour);
+
+  overflow-x: hidden;
+
+  @media screen and (prefers-color-scheme: dark) {
+    --text-colour: var(--monotones_base0);
+    --background-colour: var(--monotones_base03);
+  }
+}
+
+//Body Layout
+body {
+  display: grid;
+
+  grid-template-columns: minmax(0, calc((100% - #{$breakpoint-xlarge}) / 2)) minmax(0, 1fr) minmax(0, calc((100% - #{$breakpoint-xlarge}) / 2));
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    "footer footer footer"
+  ;
+
+  column-gap: var(--site-padding);
+
+  min-height: 100vh;
+}
+
+.site-header {
+  grid-area: header;
+}
+
+.breadcrumbs {
+  grid-area: breadcrumbs;
+}
+
+.site-content {
+  grid-area: main;
+  margin: 0 0 $base-line-height;
+}
+
+.site-sidebar {
+  grid-area: sidebar;
+  margin: $base-line-height 0;
+}
+
+.site-footer {
+  grid-area: footer;
+  padding: 0 var(--site-padding);
+}

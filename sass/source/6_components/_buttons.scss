@@ -1,0 +1,30 @@
+.btn {
+    padding: #{$base-line-height / 2} 1ch;
+    display: inline-block;
+    background-color: var(--main-colour);
+    color: var(--background-colour);
+}
+
+a.btn:not(.reverse) {
+    &::after {
+        content: '>';
+        padding-inline-start: 2ch;
+        text-decoration: none;
+    }
+}
+
+a.btn.reverse {
+    &::before {
+        content: '<';
+        padding-inline-end: 2ch;
+        text-decoration: none;
+    }
+}
+
+.btn-bar {
+    @include noList();
+
+    .btn {
+        margin-inline-end: 2ch;
+    }
+}

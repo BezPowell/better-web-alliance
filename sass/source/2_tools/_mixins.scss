@@ -1,0 +1,50 @@
+@mixin displayFlex($flow:null, $justify:null, $align:null) {
+  display: flex;
+  align-items: $align;
+  flex-flow: $flow;
+  justify-content: $justify;
+}
+
+@mixin noList() {
+  padding-left: 0;
+
+  list-style-type: none;
+}
+
+@mixin position($position:absolute, $top:null, $right:null, $bottom:null, $left:null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin fontFace ($fontFamily, $fonts, $src: '../fonts/', $variable: false, $display: auto) {
+  //$fonts is a 2 dimensional array so we need to first get the weights...
+  @each $weight, $variants in $fonts {
+    //...and then the filenames for each style of the weight.
+    @each $style, $path in $variants {
+      $filename: $src + $path;
+      @font-face {
+        font-family: $fontFamily;
+        @if $variable {
+          src: url($filename + '.woff2') format('woff2 supports variations'),
+               url($filename + '.woff2') format('woff2-variations');
+        }
+        @else {
+          src: url($filename + '.woff2') format('woff2'),
+               url($filename + '.woff') format('woff'),
+               url($filename + '.ttf') format('truetype');
+        }
+       font-style: $style;
+       font-weight: $weight;
+       font-display: $display;
+      }
+    }
+  }
+}
+
+@mixin type-setting($level: 0) {
+  font-size: map-deep-get($type-scale, $level, size);
+  line-height: map-deep-get($type-scale, $level, line-height);
+}

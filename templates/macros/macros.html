@@ -1,0 +1,6 @@
+{% macro nav_link(url, name) %}
+    {% if current_url == url %}{% set url = "#content" %}{% endif %}
+    <li class="menu-item">
+        <a href="{{ url }}">{{ name }}</a>
+    </li>
+{%- endmacro nav_link %}

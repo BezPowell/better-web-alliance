@@ -1,0 +1,25 @@
+:root {
+
+  //Colours
+  @each $colour,
+  $tones in $colours {
+
+    //...and then the hex for each tone of the colour.
+    @each $tone,
+    $hex in $tones {
+      $varname: $colour + "_"+ $tone;
+      --#{$varname}: #{$hex};
+    }
+  }
+
+  --text-colour: var(--monotones_base1);
+  --background-colour: var(--monotones_base4);
+  --main-colour: var(--colours_main);
+  --contrast-colour: var(--colours_contrast);
+
+  --site-padding: #{$base-line-height};
+}
+
+html {
+  scroll-behavior: smooth;
+}

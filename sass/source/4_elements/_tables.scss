@@ -1,0 +1,43 @@
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: $base-line-height / 2;
+  line-height: calc(#{$base-line-height} - 1px);
+  border: 1px solid;
+}
+
+th {
+  font-weight: bold;
+}
+
+tbody tr:first-of-type {
+  th, td {
+    padding-top: calc(#{$base-line-height / 2} - 1px);
+  }
+}
+
+tbody tr:last-of-type {
+  th, td {
+    padding-bottom: calc(#{$base-line-height / 2} - 1px);
+  }
+}
+
+td.good {
+  color: var(--background-colour);
+  background-color: var(--text-colour);
+}
+
+td.bad {
+  color: var(--background-colour);
+  background-color: var(--main-colour);
+}
+
+.table-wrapper {
+  margin: $base-line-height 0;
+
+  overflow-x: auto;
+  column-span: all;
+}

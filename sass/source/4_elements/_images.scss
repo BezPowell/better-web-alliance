@@ -1,0 +1,30 @@
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+figure {
+  --this-text-colour: var(--background-colour);
+  --this-background-colour: var(--main-colour);
+
+  position: relative;
+
+  column-span: all;
+
+  &:focus-within, &:hover {
+      --this-background-colour: var(--contrast-colour);
+  }
+}
+
+figcaption {
+  @include position($position: absolute, $right: 0, $bottom: 0, $left: 0);
+
+  background-color: var(--this-background-colour);
+  color: var(--this-text-colour);
+
+  pointer-events: none;
+
+  padding: calc(var(--site-padding) / 2) var(--site-padding);
+
+  transition: background-color 0.2s, color 0.2s;
+}

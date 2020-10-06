@@ -1,0 +1,22 @@
+.site-header {
+  --text-colour: var(--main-colour);
+  @include displayFlex();
+
+  border-bottom: 1px solid var(--main-colour);
+}
+
+.site-branding {
+  @include type-setting(4);
+  padding: var(--site-padding) calc(var(--site-padding) / 2);
+
+  background-color: var(--background-colour);
+  color: var(--text-colour);
+}
+
+.site-title,
+.site-description {
+  margin: 0;
+
+  font-size: inherit;
+  line-height: inherit;
+}

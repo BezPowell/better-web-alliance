@@ -1,0 +1,17 @@
+.site-footer {
+  @extend .site-header;
+  @include displayFlex(row wrap, space-between, center);
+
+  background-color: var(--background-colour);
+  color: var(--text-colour);
+  
+  border-top: 1px solid var(--main-colour);
+}
+
+  .site-footer .menu {
+    @include noList();
+  }
+
+    .site-footer .menu-item {
+      margin-inline-start: 1ch;
+    }

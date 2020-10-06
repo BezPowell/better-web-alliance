@@ -1,0 +1,44 @@
+form {
+    margin: $base-line-height 0;
+}
+
+input, button, textarea {
+    line-height: $base-line-height;
+    padding: (calc(#{$base-line-height / 4} - 2px) calc(#{$base-line-height / 2} - 2px));
+    border: 2px solid;
+    width: 100%;
+    max-width: 40ch;
+
+    background: transparent;
+    color: inherit;
+
+    cursor: pointer;
+
+    transition: color 0.2s;
+
+    &:invalid, &:out-of-range {
+      color: var(--contrast-colour);
+    }
+
+    //Focus last so it overrides :invalid
+    &:focus-within {
+      color: var(--main-colour);
+    }
+}
+
+input[type="checkbox"], input[type="radio"] {
+  width: auto;
+  float: left;
+  margin: 0.25rem 0.5rem;
+  margin-inline-start: 0;
+}
+
+input[type="submit"], button {
+  &:hover {
+    color: var(--main-colour);
+  }
+}
+
+label {
+  display: block;
+}

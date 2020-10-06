@@ -1,0 +1,86 @@
+@include fontFace(
+  $fontFamily: 'Muli',
+  $src: '../fonts/Muli/',
+  $fonts: (
+    200 900: (
+      normal: "Muli-VariableFont_wght",
+      italic: "Muli-Italic-VariableFont_wght",
+    )
+  ),
+  $variable: true,
+  $display: swap
+);
+
+@include fontFace(
+  $fontFamily: 'Lato',
+  $src: '../fonts/Lato/',
+  $fonts: (
+    400: (
+      normal: "lato-v16-latin-regular",
+      italic: "lato-v16-latin-italic",
+    ),
+    700: (
+      normal: "lato-v16-latin-700",
+      italic: "lato-v16-latin-700italic",
+    )
+  ),
+  $display: swap
+);
+
+body {
+    font-family: 'Muli', sans-serif;
+    color: var(--text-colour);
+
+    @include type-setting(0);
+}
+
+p {
+  @include type-setting(0);
+  margin: $base-line-height 0;
+
+  page-break-inside: avoid;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: $base-line-height;
+  margin-bottom: $base-line-height;
+
+  color: var(--main-colour);
+
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+
+  break-after: avoid;
+}
+
+h1 {
+  @include type-setting(6);
+}
+
+h2 {
+  @include type-setting(5);
+}
+
+h3 {
+  @include type-setting(4);
+}
+
+h4 {
+  @include type-setting(3);
+}
+
+h5 {
+  @include type-setting(2);
+}
+
+h6 {
+  @include type-setting(1);
+}
+
+small {
+  @include type-setting(-1);
+}
+
+code {
+  line-height: 0;
+}

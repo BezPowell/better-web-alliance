@@ -1,0 +1,48 @@
+{% import "macros/macros.html" as macros %}
+{# Setup this value independent of whether page or section #}
+{% if page %}
+  {% set this = page %}
+{% elif section %}
+  {% set this = section %}
+{% endif %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" href="{{ get_url(path='css/main.css') }}" media="screen" />
+    <link rel="stylesheet" href="{{ get_url(path='css/print.css') }}" media="print" />
+    <link rel="icon" type="image/svg+xml" href="{{ get_url(path='img/favicon.svg') }}">
+
+    {% if this.title %}
+      <title>{{ this.title }}{% if config.title %} | {{ config.title }}{% endif %}</title>
+    {% elif config.title %}
+      <title>{{ config.title }}</title>
+    {% endif %}
+  </head>
+  <body class="page {% block body_class %}{% endblock body_class %}">
+    <header class="site-header">
+      {% block skip_content %}
+        {% include "includes/skip_content.html" %}
+      {% endblock skip_content %}
+      <div class="site-branding">
+        <a href="/" class="site-title">{{ config.title }}</a>
+      </div>
+      <nav aria-label="site" class="site-navigation">
+        {% include "includes/nav.html" %}
+      </nav>  
+    </header>
+
+    {% block content %}
+        {% include "includes/content__front.html" %}
+    {% endblock content %}
+
+    <footer class="site-footer">
+      <ul class="menu">
+        <li class="menu-item"><a href="{{ get_url(path="rss.xml") }}">RSS</a></li>
+        <li class="menu-item"><a href="{{ get_url(path="sitemap.xml") }}">Sitemap</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
