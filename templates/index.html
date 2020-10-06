@@ -35,12 +35,11 @@
     </header>
 
     {% block content %}
-        {% include "includes/content__front.html" %}
+        {% include "includes/content.html" %}
     {% endblock content %}
 
     <footer class="site-footer">
       <ul class="menu">
-        <li class="menu-item"><a href="{{ get_url(path="rss.xml") }}">RSS</a></li>
         <li class="menu-item"><a href="{{ get_url(path="sitemap.xml") }}">Sitemap</a></li>
       </ul>
     </footer>

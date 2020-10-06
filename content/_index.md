@@ -4,9 +4,9 @@ date = 2020-10-06
 +++
 
 # The Better Web Alliance
-Is a voluntary collection of websites and web developers aiming to make the world wide web a better place by putting users first. This is an experiment very much in the early stages and any feedback and collaboration is most welcome. Eventually it is hoped that this website can provide useful resources for developers hoping to make the web a better place, such as links to tutorials and how to articles, and list of websites that have pledged to follow our principles.
+Is a voluntary collective of websites and web developers aiming to make the world wide web a better place by putting users first. This is an experiment very much in the early stages and any feedback and collaboration is most welcome. Eventually it is hoped that this website can provide useful resources for developers hoping to make the web a better place, such as links to tutorials and how to articles, and list of websites that have pledged to follow our principles.
 
-## We have a small collection of guiding principles:
+## We have a small number of guiding principles:
 1. Respect the privacy of your users.
 2. Minimise your impact on infrastructure and the environment.
 3. Make your content accessible for all.
@@ -43,6 +43,9 @@ Not everyone who visits a website can see or possesses fine motor control. Many 
 
 #### Steps to take
 Standard HTML elements have many accessibility features already implemented; always use the appropriate ones to represent your content, don't be tempted to reinvent the wheel. Make sure your choice of colours has sufficient contrast for those who are colour blind or partially sighted. Use alt text on images and ARIA attributes where necessary. Don't assume that all of your users have access to as powerful devices and fast internet connections as you do.
+
+## Get in touch
+{{ contact() }}
 
 ## References
 <ol class="footnotes">

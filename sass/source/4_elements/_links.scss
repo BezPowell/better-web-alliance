@@ -4,29 +4,8 @@ a {
 
   transition: color 0.2s ease;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: var(--contrast-colour);
   }
-}
-
-/* External link style courtesy of Heydon Pickering */
-[href^="http"]:not([href*="pinopticon.net"]):not([href*="127.0.0.1:1"])::after {
-  display: inline-block;
-
-  width: 1em;
-  height: 1em;
-
-  background-image: url('../img/newtab.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 75% auto;
-
-  image-rendering: crisp-edges;
-
-  /* alternative text rules */
-  content: '(external link)';
-
-  overflow: hidden;
-  white-space: nowrap;
-  text-indent: 1em; /* the width of the icon */
 }

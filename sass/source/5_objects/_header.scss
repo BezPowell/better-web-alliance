@@ -1,6 +1,6 @@
 .site-header {
   --text-colour: var(--main-colour);
-  @include displayFlex();
+  @include displayFlex($justify: space-between, $align: center);
 
   border-bottom: 1px solid var(--main-colour);
 }
