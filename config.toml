@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://bezpowell.github.io/better-web-alliance/"
+base_url = "https://better-web-alliance.net/"
 
 # The site title and description; used in feeds by default.
 title = "Better Web Alliance"
