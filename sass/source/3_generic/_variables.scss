@@ -2,7 +2,7 @@
 
   //Colours
   @each $colour,
-  $tones in $colours {
+  $tones in $colours-light {
 
     //...and then the hex for each tone of the colour.
     @each $tone,
@@ -12,8 +12,23 @@
     }
   }
 
-  --text-colour: var(--monotones_base1);
-  --background-colour: var(--monotones_base4);
+  @media screen and (prefers-color-scheme: dark) {
+
+    //Colours
+    @each $colour,
+    $tones in $colours-dark {
+
+      //...and then the hex for each tone of the colour.
+      @each $tone,
+      $hex in $tones {
+        $varname: $colour + "_"+ $tone;
+        --#{$varname}: #{$hex};
+      }
+    }
+  }
+
+  --text-colour: var(--monotones_base3);
+  --background-colour: var(--monotones_base1);
   --main-colour: var(--colours_main);
   --contrast-colour: var(--colours_contrast);
 

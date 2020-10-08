@@ -1,37 +1,26 @@
-@include fontFace(
-  $fontFamily: 'Muli',
+@include fontFace($fontFamily: 'Muli',
   $src: '../fonts/Muli/',
-  $fonts: (
-    200 900: (
-      normal: "Muli-VariableFont_wght",
+  $fonts: (200 900: (normal: "Muli-VariableFont_wght",
       italic: "Muli-Italic-VariableFont_wght",
-    )
-  ),
+    )),
   $variable: true,
-  $display: swap
-);
+  $display: swap);
 
-@include fontFace(
-  $fontFamily: 'Lato',
+@include fontFace($fontFamily: 'Lato',
   $src: '../fonts/Lato/',
-  $fonts: (
-    400: (
-      normal: "lato-v16-latin-regular",
+  $fonts: (400: (normal: "lato-v16-latin-regular",
       italic: "lato-v16-latin-italic",
     ),
-    700: (
-      normal: "lato-v16-latin-700",
+    700: (normal: "lato-v16-latin-700",
       italic: "lato-v16-latin-700italic",
-    )
-  ),
-  $display: swap
-);
+    )),
+  $display: swap);
 
 body {
-    font-family: 'Muli', sans-serif;
-    color: var(--text-colour);
+  font-family: 'Muli', sans-serif;
+  color: var(--text-colour);
 
-    @include type-setting(0);
+  @include type-setting(0);
 }
 
 p {
@@ -41,7 +30,12 @@ p {
   page-break-inside: avoid;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: $base-line-height;
   margin-bottom: $base-line-height;
 
@@ -83,4 +77,8 @@ small {
 
 code {
   line-height: 0;
+}
+
+dt {
+  color: var(--main-colour);
 }

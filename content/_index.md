@@ -24,25 +24,40 @@ This is bad for users, often bad for the site itself as slow loading and browser
 
 ## What can you do to help?
 ### 1. Respect the privacy of your users.
-#### The problem
-Invasive tracking scripts like google analytics and facebook pixel collect huge amounts of unnecessary personal data on your visitors, violating their privacy and heavily slowing down page load speeds. Most browsers are now blocking these to one extent or another and when they are embedded too deeply into your dependency stack can break other functionality on the page when they fail to load<sup id="a1">[1](#f1)</sup>. Tracking scripts frequently share data with other websites and the deep personal profiling that this allows is driving the rise in targeted political advertising and misinformation across the web<sup id="a2">[2](#f2)</sup>.
-
-#### Steps to take
-Ask yourself do you really need to collect all of this information on your users? Is the tiny percentage increase in sales that knowing your customers' favourite colour provides greater than the loss in sales from visitors leaving your website in frustration? If you were to swap shoes with them for a moment, would you be happy with the amount of data you are collecting on yourself? 
+<dl class="key-points">
+    <dt>The problem</dt>
+    <dd>
+    Invasive tracking scripts like google analytics and facebook pixel collect huge amounts of unnecessary personal data on your visitors, violating their privacy and heavily slowing down page load speeds. Most browsers are now blocking these to one extent or another and when they are embedded too deeply into your dependency stack can break other functionality on the page when they fail to load<sup id="a1"><a href="#f1">1</a></sup>. Tracking scripts frequently share data with other websites and the deep personal profiling that this allows is driving the rise in targeted political advertising and misinformation across the web<sup id="a2"><a href="#f2">2</a></sup>.
+    </dd>
+    <dt>Steps to take</dt>
+    <dd>
+    Ask yourself do you really need to collect all of this information on your users? Is the tiny percentage increase in sales that knowing your customers' favourite colour provides greater than the loss in sales from visitors leaving your website in frustration? If you were to swap shoes with them for a moment, would you be happy with the amount of data you are collecting on yourself?
+    </dd>
+</dl>
 
 ### 2. Minimise your impact on infrastructure and the environment.
-#### The problem
-The internet as a whole may currently consume as much as 10% of the world's electricity<sup id="a3">[3](#f3)</sup>. This produces a huge amount of carbon emissions that contributes to climate change and environmental destruction. Visitors to websites are also increasingly likely to abandon them the longer they take to load<sup id="a4">[4](#f4)</sup>. Large websites are almost always slow websites, bad for users and bad for the planet.
-
-#### Steps to take
-Fortunately, small improvements in website size and performance can quickly add up due to the sheer size of the web. Optimizing and reducing the number of images, avoiding using frameworks wholesale, and cutting down on the amount of javascript you use can all help with making your website lighter and faster.
+<dl class="key-points">
+    <dt>The problem</dt>
+    <dd>
+    The internet as a whole may currently consume as much as 10% of the world's electricity<sup id="a3"><a href="#f3">3</a></sup>. This produces a huge amount of carbon emissions that contributes to climate change and environmental destruction. Visitors to websites are also increasingly likely to abandon them the longer they take to load<sup id="a4"><a href="#f4">4</a></sup>. Large websites are almost always slow websites, bad for users and bad for the planet.
+    </dd>
+    <dt>Steps to take</dt>
+    <dd>
+    Fortunately, small improvements in website size and performance can quickly add up due to the sheer size of the web. Optimizing and reducing the number of images, avoiding using frameworks wholesale, and cutting down on the amount of javascript you use can all help with making your website lighter and faster.
+    </dd>
+</dl>
 
 ### 3. Make your content accessible for all.
-#### The problem
-Not everyone who visits a website can see or possesses fine motor control. Many sites that look visually appealing can be totally impenetrable to those using screen readers and the machines that index the web. Newsletter popups and lengthy multi-page forms may be attractive for marketing, but can be extremely frustrating for those who lack the ability to use a mouse or have cognitive impairments.
-
-#### Steps to take
-Standard HTML elements have many accessibility features already implemented; always use the appropriate ones to represent your content, don't be tempted to reinvent the wheel. Make sure your choice of colours has sufficient contrast for those who are colour blind or partially sighted. Use alt text on images and ARIA attributes where necessary. Don't assume that all of your users have access to as powerful devices and fast internet connections as you do.
+<dl class="key-points">
+    <dt>The problem</dt>
+    <dd>
+    Not everyone who visits a website can see or possesses fine motor control. Many sites that look visually appealing can be totally impenetrable to those using screen readers and the machines that index the web. Newsletter popups and lengthy multi-page forms may be attractive for marketing, but can be extremely frustrating for those who lack the ability to use a mouse or have cognitive impairments.
+    </dd>
+    <dt>Steps to take</dt>
+    <dd>
+    Standard HTML elements have many accessibility features already implemented; always use the appropriate ones to represent your content, don't be tempted to reinvent the wheel. Make sure your choice of colours has sufficient contrast for those who are colour blind or partially sighted. Use alt text on images and ARIA attributes where necessary. Don't assume that all of your users have access to as powerful devices and fast internet connections as you do.
+    </dd>
+</dl>
 
 ## Get in touch
 {{ contact() }}

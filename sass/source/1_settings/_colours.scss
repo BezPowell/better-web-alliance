@@ -1,11 +1,24 @@
 // Color palette
-$colours: (
+$colours-light: (
     "colours": (
-        "main": #5b4af0,
-        "contrast": #6e1650
+        "main": #1f76b6,
+        "contrast": #d72825
     ),
     "monotones": (
-        "base1":           #1c031f,
-        "base4":           #ffffee,
+        "base1": #fdf6e3,
+        "base2": #627272,
+        "base3": #586e75
+    )
+);
+
+$colours-dark: (
+    "colours": (
+        "main": #3294da,
+        "contrast": #e8625f
+    ),
+    "monotones": (
+        "base1": #002b36,
+        "base2": #759299,
+        "base3": #93a1a1
     )
 );
