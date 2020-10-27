@@ -33,7 +33,7 @@
     </div>
 
     <h2>Updated</h2>
-    <p>This page was last updated on <time datetime="{{ this.date }}">{{ this.date }}</time></p>
+    <p>This page was last updated on <time datetime="{{this.updated | default(value=this.date)}}">{{this.updated | default(value=this.date)}}</time></p>
 
 </main>
 {% endblock content %}
