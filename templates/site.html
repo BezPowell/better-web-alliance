@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+{% block content %}
+<main id="content" class="site-content">
+    {% if this.extra.url %}
+        <h1><a href="{{ this.extra.url }}">{{ this.title }}</a></h1>
+    {% else %}
+        <h1>{{ this.title }}</h1>
+    {% endif %}
+    {% if this.content %}
+        {{ this.content | safe }}
+    {% endif %}
+
+    <h2>Site Scores</h2>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col"><a href="https://developers.google.com/speed/pagespeed/insights/">Pagespeed Insights</a></th>
+                    <th scope="col"><a href="https://www.websitecarbon.com/">Website Carbon Calculator</a></th>
+                    <th scope="col"><a href="https://wave.webaim.org/">WAVE</a></th>
+                    <th scope="col"><a href="https://themarkup.org/blacklight">Blacklight</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mobile: {{ this.extra.pagespeed.mobile }}. Desktop: {{ this.extra.pagespeed.desktop }}</td>
+                    <td>{{ this.extra.carbon }}g</td>
+                    <td>Errors: {{ this.extra.wave.errors }}. Alerts: {{ this.extra.wave.alerts }}.</td>
+                    <td>{{ this.extra.blacklight }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Updated</h2>
+    <p>This page was last updated on <time datetime="{{ this.date }}">{{ this.date }}</time></p>
+
+</main>
+{% endblock content %}
