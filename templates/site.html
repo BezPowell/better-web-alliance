@@ -24,13 +24,50 @@
             <tbody>
                 <tr>
                     <td>Mobile: {{ this.extra.pagespeed.mobile }}. Desktop: {{ this.extra.pagespeed.desktop }}</td>
-                    <td>{{ this.extra.carbon }}g</td>
+                    <td>{{ this.extra.carbon.grams }}g</td>
                     <td>Errors: {{ this.extra.wave.errors }}. Alerts: {{ this.extra.wave.alerts }}.</td>
-                    <td>{{ this.extra.blacklight }}</td>
+                    <td>{{ this.extra.blacklight.short }}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <details>
+        <summary>How these scores are calculated</summary>
+        <p>The website homepage, and one randomly selected other page, are tested using a series of automated tools and the results aggregated. None of these tools can be considered 100% accurate, and may report some false negatives and positives, but they do provide a good objective indication of website performance without the need for a manual audit.</p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Tool</th>
+                        <th scope="col">Checks</th>
+                        <th scope="col">Aggregation Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pagespeed Insights</td>
+                        <td>Page load speed on mobile and desktop.</td>
+                        <td>Mean of results.</td>
+                    </tr>
+                    <tr>
+                        <td>Website Carbon Calculator</td>
+                        <td>Carbon emitted from viewing page.</td>
+                        <td>Mean of results.</td>
+                    </tr>
+                    <tr>
+                        <td>WAVE</td>
+                        <td>Compliance with Web Content Accessibility Guidelines (WCAG).</td>
+                        <td>Worst individual score.</td>
+                    </tr>
+                    <tr>
+                        <td>Blacklight</td>
+                        <td>Presence of user tracking technologies on page.</td>
+                        <td>Single score, as it automatically checks multiple pages.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </details>
 
     <h2>Updated</h2>
     <p>This page was last updated on <time datetime="{{this.updated | default(value=this.date)}}">{{this.updated | default(value=this.date)}}</time></p>
