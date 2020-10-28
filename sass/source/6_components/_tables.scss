@@ -1,0 +1,32 @@
+.responsive-table {
+    margin: $base-line-height 0;
+
+    @media screen and (max-width: $breakpoint-med - 1) {
+        display: block;
+        border-bottom: 1px solid;
+
+        & thead {
+            left: -9999px;
+            position: absolute;
+            visibility: hidden;
+        }
+
+        & tbody,
+        & tr {
+            display: block;
+            width: 100%;
+        }
+
+        & td,
+        & th {
+            display: block;
+            border-bottom: none;
+
+            &::before {
+                content: attr(data-title);
+                display: block;
+                color: var(--colours_main);
+            }
+        }
+    }
+}

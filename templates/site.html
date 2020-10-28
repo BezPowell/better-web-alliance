@@ -11,26 +11,24 @@
     {% endif %}
 
     <h2>Site Scores</h2>
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col"><a href="https://developers.google.com/speed/pagespeed/insights/">Pagespeed Insights</a></th>
-                    <th scope="col"><a href="https://www.websitecarbon.com/">Website Carbon Calculator</a></th>
-                    <th scope="col"><a href="https://wave.webaim.org/">WAVE</a></th>
-                    <th scope="col"><a href="https://themarkup.org/blacklight">Blacklight</a></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Mobile: {{ this.extra.pagespeed.mobile }}. Desktop: {{ this.extra.pagespeed.desktop }}.</td>
-                    <td>{{ this.extra.carbon.grams }}g</td>
-                    <td>Errors: {{ this.extra.wave.errors }}. Alerts: {{ this.extra.wave.alerts }}.</td>
-                    <td>{{ this.extra.blacklight.short }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <table class="responsive-table">
+        <thead>
+            <tr>
+                <th scope="col"><a href="https://developers.google.com/speed/pagespeed/insights/">Pagespeed Insights</a></th>
+                <th scope="col"><a href="https://www.websitecarbon.com/">Website Carbon Calculator</a></th>
+                <th scope="col"><a href="https://wave.webaim.org/">WAVE</a></th>
+                <th scope="col"><a href="https://themarkup.org/blacklight">Blacklight</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-title="Pagespeed Insights">Mobile: {{ this.extra.pagespeed.mobile }}. Desktop: {{ this.extra.pagespeed.desktop }}.</td>
+                <td data-title="Website Carbon Calculator">{{ this.extra.carbon.grams }}g</td>
+                <td data-title="WAVE">Errors: {{ this.extra.wave.errors }}. Alerts: {{ this.extra.wave.alerts }}.</td>
+                <td data-title="Blacklight">{{ this.extra.blacklight.short }}</td>
+            </tr>
+        </tbody>
+    </table>
     <details>
         <summary>How these scores are calculated</summary>
         <p>The website homepage, and one other randomly selected page, are tested using a series of automated tools and the results aggregated. None of these tools can be considered 100% accurate, and may report some false negatives and positives. However, they do provide a good objective indication of website performance without the need for a manual audit.</p>
