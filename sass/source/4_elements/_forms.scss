@@ -5,6 +5,9 @@ form {
 input,
 button,
 textarea {
+  @include type-setting(0);
+  font-family: $font-family_body;
+
   line-height: $base-line-height;
   padding: (calc(#{$base-line-height / 4} - 2px) calc(#{$base-line-height / 2} - 2px));
   border: 2px solid;
