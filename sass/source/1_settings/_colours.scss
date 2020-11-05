@@ -2,23 +2,25 @@
 $colours-light: (
     "colours": (
         "main": #1f76b6,
+        "main_dark": #1d6ea9,
         "contrast": #d72825
     ),
     "monotones": (
         "base1": #fdf6e3,
-        "base2": #627272,
-        "base3": #586e75
+        "base3": #627272,
+        "base4": #586e75
     )
 );
 
 $colours-dark: (
     "colours": (
         "main": #3294da,
+        "main_dark": #2f8bcd,
         "contrast": #e8625f
     ),
     "monotones": (
         "base1": #002b36,
-        "base2": #759299,
-        "base3": #93a1a1
+        "base3": #759299,
+        "base4": #93a1a1
     )
 );

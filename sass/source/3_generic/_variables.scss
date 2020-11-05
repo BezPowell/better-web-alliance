@@ -27,9 +27,10 @@
     }
   }
 
-  --text-colour: var(--monotones_base3);
+  --text-colour: var(--monotones_base4);
   --background-colour: var(--monotones_base1);
   --main-colour: var(--colours_main);
+  --main-colour_dark: var(--colours_main_dark);
   --contrast-colour: var(--colours_contrast);
 
   --site-padding: #{$base-line-height};
