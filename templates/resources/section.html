@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% import "resources/macros.html" as resources_macros %}
+
+{% block content %}
+<main id="content" class="site-content">
+    <h1>{{ this.title }}</h1>
+    {% if this.content %}
+        {{ this.content | safe }}
+    {% endif %}
+
+    {% if paginator.pages %}
+        {% set data = load_data(path="content/" ~ this.path ~ "data.json") %}
+        <ul class="gallery">
+            {% for category in paginator.pages %}
+                {% set_global count = 0 %}
+            {% for item in data.items %}
+                {% if item.categories is containing(category.slug) %}
+                    {% set_global count = count + 1 %}
+                {% endif %}
+            {% endfor %}
+
+            {{ category.title }}: {{ count }}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</main>
+{% endblock content %}

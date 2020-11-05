@@ -1,0 +1,22 @@
+{
+    "items": [
+        {
+            "name": "A Smashing Guide to Performance",
+            "description": "A continually updated collection of guides on web performance.",
+            "categories": [
+                "performance",
+                "articles"
+            ],
+            "homepage_url": "https://www.smashingmagazine.com/guides/performance/"
+        },
+        {
+            "name": "A Smashing Guide to Accessibility",
+            "description": "A continually updated collection of guides on accessibility.",
+            "categories": [
+                "a11y",
+                "articles"
+            ],
+            "homepage_url": "https://www.smashingmagazine.com/guides/accessibility/"
+        }
+    ]
+}

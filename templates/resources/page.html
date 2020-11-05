@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% import "resources/macros.html" as resources_macros %}
+
+{% block content %}
+    {% set section = get_section(path=page.ancestors[1]) %}
+    {% set data = load_data(path = "content/" ~ section.path ~ "data.json", format="json") %}
+    <main id="content" class="site-content">
+        <h1>{{ this.title }}</h1>
+        {% if this.content %}
+          {{ this.content | safe }}
+        {% endif %}
+
+        {% if data.items %}
+        <ul class="gallery">
+        {% for item in data.items %}
+            {% if item.categories is containing(page.slug) %}
+                {{ resources_macros::info(item=item, section=section) }}
+            {% endif %}
+        {% endfor %}
+        </ul>
+        {% endif %}
+      </main>
+{% endblock content %}
