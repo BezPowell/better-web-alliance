@@ -15,5 +15,10 @@ highlight_code = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+# The taxonomies to be rendered for that site and their configuration
+taxonomies = [
+    { name = "categories", paginate_by = 10 }, # 5 items per page for a term
+]
+
 [extra]
 # Put all your custom variables here

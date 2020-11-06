@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% import "resources/macros.html" as resources_macros %}
+
+{% block content %}
+    <h1>{{ this.title }}</h1>
+    {% if this.content %}
+        {{ this.content | safe }}
+    {% endif %}
+
+    {% if paginator.pages %}
+        {% set data = load_data(path="content/" ~ this.path ~ "data.json") %}
+        <ul class="gallery">
+            {% for category in paginator.pages %}
+                {% set_global count = 0 %}
+            {% for item in data.items %}
+                {% if item.categories is containing(category.slug) %}
+                    {% set_global count = count + 1 %}
+                {% endif %}
+            {% endfor %}
+
+            <li class="gallery-item card">
+                <h2 class="item-heading">{{ category.title }}</h2>
+                {% if category.description %}
+                    <p class="item-description">{{ category.description }}</p>
+                {% endif %}
+                <p class="meta-count">{{ count }} Item{% if count > 1 %}s{% endif %}</p>
+                <a href="{{ category.permalink }}" class="btn">Browse {{ category.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock content %}

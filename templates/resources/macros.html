@@ -1,0 +1,39 @@
+{% macro info(item, section) %}
+
+{% if item.name %}
+    {% set name = item.name %}
+{% endif %}
+
+{# OVERRIDES: If specified in the config file, the above can be rewritten. #}
+{% if item.repository_url %}   {% set repository_url = item.repository_url %}         {% endif %}
+{% if item.homepage_url %}     {% set homepage_url = item.homepage_url %}             {% endif %}
+{% if item.description %}      {% set description = item.description %}               {% endif %}
+
+{# Simple heuristic for picking the 'main' URL for an entry - might need a way of overriding #}
+{% if homepage_url %}
+    {% set primary_url = homepage_url %}
+{% elif repository_url %}
+    {% set primary_url = repository_url %}
+{% endif %}
+
+<li class="gallery-item card">     
+    <h2 class="item-heading">
+        {% if primary_url %}
+            <a href="{{ primary_url }}">{{ name }}</a>
+        {% else %}
+            {{ name }}
+        {% endif %}
+    </h2>
+
+    <div class="meta">
+        Categories: 
+        {% for category in item.categories %}
+            {% set category_data = get_page(path=section.path ~ category ~ ".md") -%}
+            <a href="{{ category_data.permalink }}">{{ category_data.title }}</a>
+            {%- if not loop.last -%}, {% endif -%}
+        {% endfor %}
+    </div>
+
+    <p>{{ description }}</p>
+</li>
+{% endmacro info %}

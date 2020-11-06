@@ -32,7 +32,7 @@ This is bad for users, often bad for the site itself as slow loading and browser
     </dd>
     <dt>Steps to take</dt>
     <dd>
-    Ask yourself do you really need to collect all of this information on your users? Is the tiny percentage increase in sales that knowing your customers' favourite colour provides greater than the loss in sales from visitors leaving your website in frustration? If you were to swap shoes with them for a moment, would you be happy with the amount of data you are collecting on yourself?
+    Ask yourself do you really need to collect all of this information on your users? Is the tiny percentage increase in sales that knowing your customers' favourite colour provides greater than the loss in sales from visitors leaving your website in frustration? If you were to swap shoes with them for a moment, would you be happy with the amount of data you are collecting on yourself and possibly sharing with others?
     </dd>
 </dl>
 

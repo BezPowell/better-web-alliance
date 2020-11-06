@@ -4,3 +4,24 @@
         <a href="{{ url }}">{{ name }}</a>
     </li>
 {%- endmacro nav_link %}
+
+{% macro breadcrumb(path) %}
+{% set cur = "/" -%}
+    <li>
+    {% if path | first == "" %}
+        <a href="{{cur}}" aria-current="location">home</a>
+    {% else %}
+        <a href="{{cur}}">home</a>
+    {% endif %}
+    </li>
+{% for elt in path %}
+    {% set_global cur = cur ~ elt ~ "/" %}
+    <li>
+    {% if loop.last %}
+        <a href="{{cur}}" aria-current="location">{{ elt }}</a>
+    {% else %}
+        <a href="{{cur}}">{{ elt }}</a>
+    {% endif %}
+    </li>
+{% endfor %}
+{%- endmacro breadcrumb %}

@@ -30,3 +30,19 @@
 .menu {
     @include displayFlex(row wrap);
 }
+
+.breadcrumbs ol {
+    @include noList();
+    @include displayFlex(row wrap);
+
+    margin: $base-line-height 0 0;
+
+    li:not(:last-child)::after {
+        content: "/";
+        padding: 0 0.5ch;
+    }
+
+    li a[aria-current="location"] {
+        color: var(--contrast-colour);
+    }
+}

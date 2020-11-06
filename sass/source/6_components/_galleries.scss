@@ -5,7 +5,7 @@
   grid-template-columns: 1fr;
   grid-auto-rows: 1fr;
 
-  grid-gap:  #{$base-line-height / 2};
+  grid-gap: #{$base-line-height / 2};
 
   margin: #{$base-line-height} 0;
 
@@ -16,22 +16,12 @@
   @media screen and (min-width: $breakpoint-large) {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  @media screen and (min-width: $breakpoint-xlarge) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
-.gallery-item figure {
+.gallery-item .item-heading {
   margin: 0;
-  height: 100%
 }
 
-.gallery-item img, .gallery-item a {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
+.gallery-item .item-description {
+  margin-top: 0;
 }

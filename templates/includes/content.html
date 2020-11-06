@@ -1,5 +1,3 @@
-<main id="content" class="site-content">
-  {% if this.content %}
-    {{ this.content | safe }}
-  {% endif %}
-</main>
+{% if this.content %}
+  {{ this.content | safe }}
+{% endif %}
