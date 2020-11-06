@@ -2,7 +2,6 @@
 {% import "resources/macros.html" as resources_macros %}
 
 {% block content %}
-<main id="content" class="site-content">
     <h1>{{ this.title }}</h1>
     {% if this.content %}
         {{ this.content | safe }}
@@ -19,9 +18,15 @@
                 {% endif %}
             {% endfor %}
 
-            {{ category.title }}: {{ count }}
+            <li class="gallery-item card">
+                <h2 class="item-heading">{{ category.title }}</h2>
+                {% if category.description %}
+                    <p class="item-description">{{ category.description }}</p>
+                {% endif %}
+                <p class="meta-count">{{ count }} Item{% if count > 1 %}s{% endif %}</p>
+                <a href="{{ category.permalink }}" class="btn">Browse {{ category.title }}</a>
+            </li>
             {% endfor %}
         </ul>
     {% endif %}
-</main>
 {% endblock content %}

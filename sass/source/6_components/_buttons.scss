@@ -1,8 +1,19 @@
 .btn {
-    padding: #{$base-line-height / 2} 1ch;
+    padding: calc(#{$base-line-height / 2} - 1px) 1ch;
+    border: 1px solid var(--main-colour);
     display: inline-block;
     background-color: var(--main-colour);
     color: var(--background-colour);
+    text-decoration: none;
+
+    transition: color 0.2s, background-color 0.2s, border 0.2s;
+
+    &:hover,
+    &:focus {
+        background-color: var(--background-colour);
+        border-color: var(--main-colour);
+        color: var(--main-colour);
+    }
 }
 
 a.btn:not(.reverse) {

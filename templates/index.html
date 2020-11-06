@@ -37,9 +37,18 @@
       </nav>  
     </header>
 
-    {% block content %}
-        {% include "includes/content.html" %}
-    {% endblock content %}
+    <main id="content" class="site-content">
+      {% block breadcrumbs %}
+      <nav aria-label="breadcrumbs" class="breadcrumbs">
+        <ol>
+          {{ macros::breadcrumb(path=this.components | safe) }}
+        </ol>
+      </nav>
+      {% endblock breadcrumbs %}
+      {% block content %}
+          {% include "includes/content.html" %}
+      {% endblock content %}
+    </main>
 
     <footer class="site-footer">
       <ul class="menu">

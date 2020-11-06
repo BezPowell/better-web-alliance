@@ -7,7 +7,6 @@
 {# OVERRIDES: If specified in the config file, the above can be rewritten. #}
 {% if item.repository_url %}   {% set repository_url = item.repository_url %}         {% endif %}
 {% if item.homepage_url %}     {% set homepage_url = item.homepage_url %}             {% endif %}
-{% if item.gitter_url %}       {% set gitter_url = item.gitter_url %}                 {% endif %}
 {% if item.description %}      {% set description = item.description %}               {% endif %}
 
 {# Simple heuristic for picking the 'main' URL for an entry - might need a way of overriding #}
@@ -17,7 +16,7 @@
     {% set primary_url = repository_url %}
 {% endif %}
 
-<li class="gallery-item">     
+<li class="gallery-item card">     
     <h2 class="item-heading">
         {% if primary_url %}
             <a href="{{ primary_url }}">{{ name }}</a>

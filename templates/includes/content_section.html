@@ -1,27 +1,26 @@
-<main id="content" class="site-content">
-  <h1>{{ this.title }}</h1>
-  {% if this.content %}
-    {{ this.content | safe }}
-  {% endif %}
-  <ul class="site-list">
-    {% for page in paginator.pages %}
-      <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
-    {% endfor %}
-  </ul>
-  {% if paginator.next or paginator.previous %}
-  <nav aria-label="pagination">
-      <ul class="menu btn-bar">
-          {% if paginator.previous %}
-          <li>
-            <a href="{{ paginator.previous }}" class="btn reverse">Previous page.</a>
-          </li>
-          {% endif %}
-          {% if paginator.next %}
-          <li>
-            <a href="{{ paginator.next }}" class="btn">Next page.</a>
-          </li>
-          {% endif %}
-      </ul>
-  </nav>
-  {% endif %}
-</main>
+
+<h1>{{ this.title }}</h1>
+{% if this.content %}
+  {{ this.content | safe }}
+{% endif %}
+<ul class="site-list">
+  {% for page in paginator.pages %}
+    <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+  {% endfor %}
+</ul>
+{% if paginator.next or paginator.previous %}
+<nav aria-label="pagination">
+    <ul class="menu btn-bar">
+        {% if paginator.previous %}
+        <li>
+          <a href="{{ paginator.previous }}" class="btn reverse">Previous page.</a>
+        </li>
+        {% endif %}
+        {% if paginator.next %}
+        <li>
+          <a href="{{ paginator.next }}" class="btn">Next page.</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}

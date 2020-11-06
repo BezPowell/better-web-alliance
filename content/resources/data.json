@@ -17,6 +17,70 @@
                 "articles"
             ],
             "homepage_url": "https://www.smashingmagazine.com/guides/accessibility/"
+        },
+        {
+            "name": "Blacklight",
+            "description": "Tool to scan a site for known tracking scripts.",
+            "categories": [
+                "privacy",
+                "tools"
+            ],
+            "homepage_url": "https://themarkup.org/blacklight"
+        },
+        {
+            "name": "PageSpeed Insights",
+            "description": "Tool to check for, and suggest ways to improve, performance problems.",
+            "categories": [
+                "performance",
+                "tools"
+            ],
+            "homepage_url": "https://developers.google.com/speed/pagespeed/insights/"
+        },
+        {
+            "name": "Website Carbon Calculator",
+            "description": "Tool to calculate grams of carbon emitted for each page load.",
+            "categories": [
+                "performance",
+                "tools"
+            ],
+            "homepage_url": "https://www.websitecarbon.com/"
+        },
+        {
+            "name": "Pingdom Tools",
+            "description": "Set of tools to analyse page load speed.",
+            "categories": [
+                "performance",
+                "tools"
+            ],
+            "homepage_url": "https://tools.pingdom.com/"
+        },
+        {
+            "name": "WAVE",
+            "description": "Tool to help identify a11y errors and WCAG compliance.",
+            "categories": [
+                "a11y",
+                "tools"
+            ],
+            "homepage_url": "https://wave.webaim.org/"
+        },
+        {
+            "name": "Web Fundamentals",
+            "description": "Google's training material on web performance.",
+            "categories": [
+                "performance",
+                "articles"
+            ],
+            "homepage_url": "https://developers.google.com/web/fundamentals"
+        },
+        {
+            "name": "Make Jamstack Slow? Challenge Accepted.",
+            "description": "A very interesting article on common things that slow down sites, including tracking scripts.",
+            "categories": [
+                "performance",
+                "privacy",
+                "articles"
+            ],
+            "homepage_url": "https://css-tricks.com/make-jamstack-slow-challenge-accepted/"
         }
     ]
 }
