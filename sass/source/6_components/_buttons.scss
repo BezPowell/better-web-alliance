@@ -1,18 +1,18 @@
 .btn {
     padding: calc(#{$base-line-height / 2} - 1px) 1ch;
-    border: 1px solid var(--main-colour);
+    border: 1px solid var(--colour-main);
     display: inline-block;
-    background-color: var(--main-colour);
-    color: var(--background-colour);
+    background-color: var(--colour-main);
+    color: var(--colour-background);
     text-decoration: none;
 
     transition: color 0.2s, background-color 0.2s, border 0.2s;
 
     &:hover,
     &:focus {
-        background-color: var(--background-colour);
-        border-color: var(--main-colour);
-        color: var(--main-colour);
+        background-color: var(--colour-background);
+        border-color: var(--colour-main);
+        color: var(--colour-main);
     }
 }
 

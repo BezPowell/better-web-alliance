@@ -8,7 +8,7 @@
 
 body {
   font-family: $font-family_body;
-  color: var(--text-colour);
+  color: var(--colour-text);
 
   @include type-setting(0);
 }
@@ -29,7 +29,7 @@ h6 {
   margin-top: $base-line-height;
   margin-bottom: $base-line-height;
 
-  color: var(--main-colour);
+  color: var(--colour-main);
 
   font-family: $font-family_heading;
   font-weight: 400;
@@ -70,5 +70,5 @@ code {
 }
 
 dt {
-  color: var(--main-colour);
+  color: var(--colour-main);
 }

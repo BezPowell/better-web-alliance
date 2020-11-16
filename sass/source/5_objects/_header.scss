@@ -1,16 +1,16 @@
 .site-header {
-  --text-colour: var(--main-colour);
+  --colour-text: var(--colour-main);
   @include displayFlex($justify: space-between, $align: center);
 
-  border-bottom: 1px solid var(--main-colour);
+  border-bottom: 1px solid var(--colour-main);
 }
 
 .site-branding {
   @include type-setting(4);
   padding: var(--site-padding) calc(var(--site-padding) / 2);
 
-  background-color: var(--background-colour);
-  color: var(--text-colour);
+  background-color: var(--colour-background);
+  color: var(--colour-text);
 }
 
 .site-title,

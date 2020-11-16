@@ -4,15 +4,15 @@ img, video {
 }
 
 figure {
-  --this-text-colour: var(--background-colour);
-  --this-background-colour: var(--main-colour);
+  --this-text-colour: var(--colour-background);
+  --this-background-colour: var(--colour-main);
 
   position: relative;
 
   column-span: all;
 
   &:focus-within, &:hover {
-      --this-background-colour: var(--contrast-colour);
+      --this-background-colour: var(--colour-contrast);
   }
 }
 

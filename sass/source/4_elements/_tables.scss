@@ -31,13 +31,13 @@ tbody tr:last-of-type {
 }
 
 td.good {
-  color: var(--background-colour);
-  background-color: var(--text-colour);
+  color: var(--colour-background);
+  background-color: var(--colour-text);
 }
 
 td.bad {
-  color: var(--background-colour);
-  background-color: var(--main-colour);
+  color: var(--colour-background);
+  background-color: var(--colour-main);
 }
 
 .table-wrapper {

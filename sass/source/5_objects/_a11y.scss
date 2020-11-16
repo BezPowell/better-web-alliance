@@ -11,10 +11,10 @@
   word-wrap: normal !important;
 
   &:focus-within {
-    background-color: var(--text-colour);
+    background-color: var(--colour-text);
     clip: auto !important;
     clip-path: none;
-    color: var(--background-colour);
+    color: var(--colour-background);
     display: block;
     font-size: 1em;
     height: auto;

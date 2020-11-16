@@ -1,14 +1,9 @@
 //Body Colours
 body {
-  background-color: var(--background-colour);
-  color: var(--text-colour);
+  background-color: var(--colour-background);
+  color: var(--colour-text);
 
   overflow-x: hidden;
-
-  @media screen and (prefers-color-scheme: dark) {
-    --text-colour: var(--monotones_base0);
-    --background-colour: var(--monotones_base03);
-  }
 }
 
 //Body Layout

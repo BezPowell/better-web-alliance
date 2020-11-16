@@ -22,12 +22,12 @@ textarea {
 
   &:invalid,
   &:out-of-range {
-    color: var(--contrast-colour);
+    color: var(--colour-contrast);
   }
 
   //Focus last so it overrides :invalid
   &:focus {
-    color: var(--main-colour);
+    color: var(--colour-main);
     outline-style: none;
     border-style: dashed;
   }
@@ -56,26 +56,26 @@ button {
   border-style: outset;
 
   &:hover {
-    color: var(--background-colour);
-    border-color: var(--main-colour_dark);
-    background-color: var(--main-colour);
+    color: var(--colour-background);
+    border-color: var(--colour-main_dark);
+    background-color: var(--colour-main);
   }
 
   &:focus {
-    outline-color: var(--main-colour);
+    outline-color: var(--colour-main);
     outline-style: dashed;
 
     border-style: outset;
-    color: var(--background-colour);
-    border-color: var(--main-colour_dark);
-    background-color: var(--main-colour);
+    color: var(--colour-background);
+    border-color: var(--colour-main_dark);
+    background-color: var(--colour-main);
   }
 
   &:active {
     border-style: inset;
-    color: var(--background-colour);
-    border-color: var(--main-colour_dark);
-    background-color: var(--main-colour_dark);
+    color: var(--colour-background);
+    border-color: var(--colour-main_dark);
+    background-color: var(--colour-main_dark);
   }
 }
 

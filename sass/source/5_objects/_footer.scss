@@ -2,10 +2,10 @@
   @extend .site-header;
   @include displayFlex(row wrap, space-between, center);
 
-  background-color: var(--background-colour);
-  color: var(--text-colour);
+  background-color: var(--colour-background);
+  color: var(--colour-text);
   
-  border-top: 1px solid var(--main-colour);
+  border-top: 1px solid var(--colour-main);
 }
 
   .site-footer .menu {
