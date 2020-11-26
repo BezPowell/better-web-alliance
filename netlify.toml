@@ -1,9 +1,2 @@
-# netlify.toml
-[[headers]]
-  for = "/processed_images/*"
-  [headers.values]
-    cache-control = "public,max-age=31557600"
-[[headers]]
-  for = "/fonts/*"
-  [headers.values]
-    cache-control = "public,max-age=31557600"
+[[plugins]]
+package = "netlify-plugin-hashfiles"
