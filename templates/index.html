@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="{{ get_url(path='css/main.css') }}" media="screen" />
     <link rel="stylesheet" href="{{ get_url(path='css/print.css') }}" media="print" />
+    <link rel="preload" as="font" href="{{ get_url(path='fonts/Lora/Lora-VariableFont_wght.woff2') }}" type="font/woff2" crossorigin="anonymous">
 
     {% if this.title %}
       <title>{{ this.title }}{% if config.title %} | {{ config.title }}{% endif %}</title>
