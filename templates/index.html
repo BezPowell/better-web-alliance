@@ -15,8 +15,8 @@
       <meta name="description" content="{{ this.description }}">
     {% endblock meta %}
 
-    <link rel="stylesheet" href="{{ get_url(path='css/main.css') }}" media="screen" />
-    <link rel="stylesheet" href="{{ get_url(path='css/print.css') }}" media="print" />
+    <link rel="stylesheet" href="{{ get_url(path='css/main.css', cachebust=true) }}" media="screen" />
+    <link rel="stylesheet" href="{{ get_url(path='css/print.css', cachebust=true) }}" media="print" />
 
     {% if this.title %}
       <title>{{ this.title }}{% if config.title %} | {{ config.title }}{% endif %}</title>
