@@ -1,60 +1,61 @@
 {% import "macros/macros.html" as macros %}
 {# Setup this value independent of whether page or section #}
 {% if page %}
-  {% set this = page %}
+{% set this = page %}
 {% elif section %}
-  {% set this = section %}
+{% set this = section %}
 {% endif %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    {% block meta %}
-      <meta name="description" content="{{ this.description }}">
-    {% endblock meta %}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="stylesheet" href="{{ get_url(path='css/main.css', cachebust=true) }}" media="screen" />
-    <link rel="stylesheet" href="{{ get_url(path='css/print.css', cachebust=true) }}" media="print" />
+  {% block meta %}
+  <meta name="description" content="{{ this.description }}">
+  {% endblock meta %}
 
-    {% if this.title %}
-      <title>{{ this.title }}{% if config.title %} | {{ config.title }}{% endif %}</title>
-    {% elif config.title %}
-      <title>{{ config.title }}</title>
-    {% endif %}
-  </head>
-  <body class="page {% block body_class %}{% endblock body_class %}">
-    <header class="site-header">
-      {% block skip_content %}
-        {% include "includes/skip_content.html" %}
-      {% endblock skip_content %}
-      <div class="site-branding">
-        <a href="/" class="site-title">{{ config.title }}</a>
-      </div>
-      <nav aria-label="site" class="site-navigation">
-        {% include "includes/nav.html" %}
-      </nav>  
-    </header>
+  <link rel="stylesheet" href="{{ get_url(path='css/main.css', cachebust=true) }}" media="screen" />
+  <link rel="stylesheet" href="{{ get_url(path='css/print.css', cachebust=true) }}" media="print" />
 
-    <main id="content" class="site-content">
-      {% block breadcrumbs %}
-      <nav aria-label="breadcrumbs" class="breadcrumbs">
-        <ol>
-          {{ macros::breadcrumb(path=this.components | safe) }}
-        </ol>
-      </nav>
-      {% endblock breadcrumbs %}
-      {% block content %}
-          {% include "includes/content.html" %}
-      {% endblock content %}
-    </main>
+  {% block title %}
+  {% if this.title %}
+  <title>{{ this.title }}{% if config.title %} | {{ config.title }}{% endif %}</title>
+  {% elif config.title %}
+  <title>{{ config.title }}</title>
+  {% endif %}
+  {% endblock title %}
+</head>
 
-    <footer class="site-footer">
-      <ul class="menu">
-        <li class="menu-item"><a href="{{ get_url(path="sitemap.xml") }}">Sitemap</a></li>
-        <li class="menu-item"><a href="https://github.com/BezPowell/better-web-alliance">Git Repository</a></li>
-      </ul>
-    </footer>
-  </body>
+<body class="page {% block body_class %}{% endblock body_class %}">
+  <header class="site-header">
+    {% block skip_content %}
+    {% include "includes/skip_content.html" %}
+    {% endblock skip_content %}
+    <div class="site-branding">
+      <a href="/" class="site-title">{{ config.title }}</a>
+    </div>
+    <nav aria-label="site" class="site-navigation">
+      {% include "includes/nav.html" %}
+    </nav>
+  </header>
+
+  <main id="content" class="site-content">
+    {% block breadcrumbs %}
+    {% include "includes/breadcrumbs.html" %}
+    {% endblock breadcrumbs %}
+    {% block content %}
+    {% include "includes/content.html" %}
+    {% endblock content %}
+  </main>
+
+  <footer class="site-footer">
+    <ul class="menu">
+      <li class="menu-item"><a href="{{ get_url(path=" sitemap.xml") }}">Sitemap</a></li>
+      <li class="menu-item"><a href="https://github.com/BezPowell/better-web-alliance">Git Repository</a></li>
+    </ul>
+  </footer>
+</body>
+
 </html>

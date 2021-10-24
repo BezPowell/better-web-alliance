@@ -1,0 +1,17 @@
+{% set levels = current_path | split(pat="/") | slice(end=-1) %}
+<nav aria-label="breadcrumbs" class="breadcrumbs">
+    <ol>
+        {% set current = "" %}
+        {% for level in levels %}
+        {% set_global current = current ~ level ~ "/" %}
+        {% if level == "" %}
+        {% set name = "home" %}
+        {% else %}
+        {% set name = level %}
+        {% endif %}
+        <li>
+            <a href="{{ current }}" {% if loop.last %}aria-current="location" {% endif %}>{{ name }}</a>
+        </li>
+        {% endfor %}
+    </ol>
+</nav>

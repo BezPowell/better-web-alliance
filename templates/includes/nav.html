@@ -2,6 +2,9 @@
 {% set root = get_section(path="_index.md") %}
   <ul class="main-menu">
     {# generate links for sections #}
+    {% set resources = get_taxonomy(kind="resources") %}
+    {{ macros::nav_link(url="/" ~ resources.kind.name ~ "/", name=resources.kind.name | capitalize) }}
+
     {% for link in root.subsections %}
       {% set item = get_section(path=link, metadata_only=true) %}
       {{ macros::nav_link(url=item.permalink, name=item.title) }}
