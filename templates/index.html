@@ -18,11 +18,13 @@
     <link rel="stylesheet" href="{{ get_url(path='css/main.css', cachebust=true) }}" media="screen" />
     <link rel="stylesheet" href="{{ get_url(path='css/print.css', cachebust=true) }}" media="print" />
 
+    {% block title %}
     {% if this.title %}
       <title>{{ this.title }}{% if config.title %} | {{ config.title }}{% endif %}</title>
     {% elif config.title %}
       <title>{{ config.title }}</title>
     {% endif %}
+    {% endblock title %}
   </head>
   <body class="page {% block body_class %}{% endblock body_class %}">
     <header class="site-header">

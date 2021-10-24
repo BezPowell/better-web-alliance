@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+{% block title %}
+<title>{{ taxonomy.name | capitalize }}{% if config.title %} | {{ config.title }}{% endif %}</title>
+{% endblock title %}
+{% block meta %}
+{% set descriptions = load_data(path="content/resources/descriptions.json", format="json") %}
+{% if descriptions[taxonomy.name] %}
+<meta name="description" content="{{ descriptions[taxonomy.name] }}">
+{% endif %}
+{% endblock meta %}
+{% block breadcrumbs %}
+<nav aria-label="breadcrumbs" class="breadcrumbs">
+    <ol>
+        <li>
+            <a href="/">home</a>
+        </li>
+        <li>
+            <a href="{{ current_path }}" aria-current="location">{{ taxonomy.name }}</a>
+        </li>
+    </ol>
+</nav>
+{% endblock breadcrumbs %}
+{% block content %}
+{% set descriptions = load_data(path="content/resources/descriptions.json", format="json") %}
+<h1>{{ taxonomy.name | capitalize }}</h1>
+{% if descriptions[taxonomy.name] %}
+<p>{{ descriptions[taxonomy.name] }}</p>
+{% endif %}
+<ul class="gallery">
+    {% for term in terms %}
+    <li class="gallery-item card">
+        <h2 class="item-heading">{{ term.name | capitalize }}</h2>
+        <div class="card-body">
+            {% if descriptions[term.name] %}
+            <p class="item-description">{{ descriptions[term.name] }}</p>
+            {% endif %}
+            <p class="meta-count">{{ term.pages | length }} Item{% if term.pages | length > 1 %}s{% endif %}</p>
+            <a href="{{ term.permalink }}" class="btn">Browse {{ term.name | capitalize }}</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

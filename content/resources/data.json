@@ -1,42 +1,6 @@
 {
     "items": [
         {
-            "name": "A Smashing Guide to Performance",
-            "description": "A continually updated collection of guides on web performance.",
-            "categories": [
-                "performance",
-                "articles"
-            ],
-            "homepage_url": "https://www.smashingmagazine.com/guides/performance/"
-        },
-        {
-            "name": "A Smashing Guide to Accessibility",
-            "description": "A continually updated collection of guides on accessibility.",
-            "categories": [
-                "a11y",
-                "articles"
-            ],
-            "homepage_url": "https://www.smashingmagazine.com/guides/accessibility/"
-        },
-        {
-            "name": "Blacklight",
-            "description": "Tool to scan a site for known tracking scripts.",
-            "categories": [
-                "privacy",
-                "tools"
-            ],
-            "homepage_url": "https://themarkup.org/blacklight"
-        },
-        {
-            "name": "PageSpeed Insights",
-            "description": "Tool to check for, and suggest ways to improve, performance problems.",
-            "categories": [
-                "performance",
-                "tools"
-            ],
-            "homepage_url": "https://developers.google.com/speed/pagespeed/insights/"
-        },
-        {
             "name": "Website Carbon Calculator",
             "description": "Tool to calculate grams of carbon emitted for each page load.",
             "categories": [

@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% block title %}
+<title>{{ term.name | capitalize }}{% if config.title %} | {{ config.title }}{% endif %}</title>
+{% endblock title %}
+{% block meta %}
+{% set descriptions = load_data(path="content/resources/descriptions.json", format="json") %}
+{% if descriptions[term.name] %}
+<meta name="description" content="{{ descriptions[term.name] }}">
+{% endif %}
+{% endblock meta %}
+{% block breadcrumbs %}
+<nav aria-label="breadcrumbs" class="breadcrumbs">
+    <ol>
+        <li>
+            <a href="/">home</a>
+        </li>
+        <li>
+            <a href="/{{ taxonomy.name }}/" aria-current="location">{{ taxonomy.name }}</a>
+        </li>
+        <li>
+            <a href="{{ current_path }}" aria-current="location">{{ term.name }}</a>
+        </li>
+    </ol>
+</nav>
+{% endblock breadcrumbs %}
+{% block content %}
+{% set descriptions = load_data(path="content/resources/descriptions.json", format="json") %}
+<h1>{{ term.name | capitalize }}</h1>
+{% if descriptions[term.name] %}
+<p>{{ descriptions[term.name] }}</p>
+{% endif %}
+<ul class="gallery">
+    {% for item in paginator.pages %}
+    <li class="gallery-item card">
+        {% if item.extra.canonical %}
+        <h2 class="item-heading">
+            <a href="{{item.extra.canonical}}">{{ item.title }}</a>
+        </h2>
+        {% else %}
+        <h2 class="item-heading">{{ item.title }}</h2>
+        {% endif %}
+        <div class="card-body">
+            {% if item.taxonomies["resources"] %}
+            <div class="meta">
+                Categories:
+                {% for category in item.taxonomies["resources"] %}
+                <a href="{{ get_taxonomy_url(kind="resources", name=category) | safe }}">
+                    {{ category }}
+                </a>
+                {%- if not loop.last -%}, {% endif -%}
+                {% endfor %}
+            </div>
+            {% endif %}
+            <p>{{ item.description }}</p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
