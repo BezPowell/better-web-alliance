@@ -1,3 +1,4 @@
 # Output directory
 /public
 /static/processed_images
+*.code-workspace
