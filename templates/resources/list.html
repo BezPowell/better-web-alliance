@@ -8,18 +8,6 @@
 <meta name="description" content="{{ descriptions[taxonomy.name] }}">
 {% endif %}
 {% endblock meta %}
-{% block breadcrumbs %}
-<nav aria-label="breadcrumbs" class="breadcrumbs">
-    <ol>
-        <li>
-            <a href="/">home</a>
-        </li>
-        <li>
-            <a href="{{ current_path }}" aria-current="location">{{ taxonomy.name }}</a>
-        </li>
-    </ol>
-</nav>
-{% endblock breadcrumbs %}
 {% block content %}
 {% set descriptions = load_data(path="content/resources/descriptions.json", format="json") %}
 <h1>{{ taxonomy.name | capitalize }}</h1>

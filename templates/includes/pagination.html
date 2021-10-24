@@ -1,0 +1,16 @@
+{% if paginator.next or paginator.previous %}
+<nav aria-label="pagination">
+    <ul class="menu btn-bar">
+        {% if paginator.previous %}
+        <li>
+          <a href="{{ paginator.previous }}" class="btn reverse">Previous page.</a>
+        </li>
+        {% endif %}
+        {% if paginator.next %}
+        <li>
+          <a href="{{ paginator.next }}" class="btn">Next page.</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
