@@ -1,7 +1,6 @@
 +++
 title = "Home"
 description = "The Better Web Alliance is a voluntary collective of websites and web developers aiming to make the world wide web a better place by putting users first."
-date = 2020-10-06
 +++
 
 # The Better Web Alliance
