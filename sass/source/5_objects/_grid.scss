@@ -1,0 +1,16 @@
+.grid {
+  --target-width: 22rem;
+
+  display: grid;
+  gap: var(--pico-block-spacing-vertical);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--target-width)), 1fr));
+}
+
+ul.grid,
+ol.grid {
+  padding-inline-start: 0;
+
+  &>li {
+    list-style-type: none;
+  }
+}

@@ -1,26 +1,17 @@
-.key-points {
-    margin-bottom: $base-line-height * 2;
-
-    @media screen and (min-width: $breakpoint-large) {
+@media screen and (min-width: 1024px) {
+    .key-points {
         display: grid;
+        gap: var(--pico-block-spacing-vertical);
         grid-template-columns: 1fr 1fr;
-        grid-auto-rows: auto;
-        column-gap: $base-line-height;
-    }
-}
 
-.key-points dt {
-    @include type-setting(2);
-    margin-top: $base-line-height;
+        dt {
+            margin-block-end: 0;
+            grid-row: 1;
+        }
 
-    @media screen and (min-width: $breakpoint-large) {
-        margin-top: 0;
-        grid-row: 1;
-    }
-}
-
-.key-points dd {
-    @media screen and (min-width: $breakpoint-large) {
-        margin-left: 0;
+        dd {
+            margin-inline-start: 0;
+            grid-row: 2;
+        }
     }
 }

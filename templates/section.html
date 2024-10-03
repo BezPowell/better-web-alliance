@@ -1,4 +1,12 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% block content %}
-    {% include "includes/content_section.html" %}
+{{ section.content | safe }}
+<ul>
+    {% for page in paginator.pages %}
+     <li>
+        {{ macros::link(href=page.permalink, text=page.title) }}
+     </li>
+    {% endfor %}
+    {{ macros::pagination(paginator=paginator) }}
+</ul>
 {% endblock content %}

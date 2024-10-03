@@ -1,34 +1,4 @@
-.screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  word-wrap: normal !important;
-
-  &:focus-within {
-    background-color: var(--colour-text);
-    clip: auto !important;
-    clip-path: none;
-    color: var(--colour-background);
-    display: block;
-    font-size: 1em;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000; /* Above WP toolbar. */
-  }
-}
-
-:focus {
-  outline: 3px dashed;
-  outline-offset: 2px;
+.skip-link:not(:focus-within) {
+    clip: rect(0, 0, 0, 0);
+    position: absolute
 }

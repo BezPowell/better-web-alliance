@@ -1,11 +1,47 @@
-.card {
-    padding: calc(#{$base-line-height / 2} - 1px);
-    border: 1px solid;
+@forward "../../../node_modules/@picocss/pico/scss/pico.scss";
 
-    box-shadow: 3px 3px 15px -6px var(--colour-text);
+article header {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-block-end: 0
+    }
 }
 
-.meta-count {
-    @include type-setting(2);
-    font-weight: 600;
+article :last-child:not(footer) {
+    margin-block-end: 0
+}
+
+.card {
+    @extend article;
+}
+
+@supports (grid-template-rows: subgrid) {
+    .grid li {
+        display: contents;
+    }
+
+    .grid article {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: subgrid;
+        grid-row: span 2;
+
+        &:has(>footer) {
+            grid-row: span 3;
+        }
+    }
+
+    .grid article,
+    .grid article header {
+        margin-block-end: 0;
+    }
+
+    .grid article footer {
+        margin-block-start: 0;
+    }
 }

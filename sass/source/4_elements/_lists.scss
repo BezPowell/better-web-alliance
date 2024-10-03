@@ -1,7 +1,11 @@
-ol, ul {
-    margin: $base-line-height 0;
+@forward "../../../node_modules/@picocss/pico/scss/pico.scss";
 
-  & ol, & ul {
-    margin: 0;
-  }
+dt {
+  font-size: 1.125rem;
+  line-height: 1.225;
+  color: var(--pico-h5-color);
+}
+
+dt, dd {
+  margin-block-end: var(--pico-typography-spacing-vertical);
 }

@@ -1,5 +1,5 @@
 {% set levels = current_path | split(pat="/") | slice(end=-1) %}
-<nav aria-label="breadcrumbs" class="breadcrumbs">
+<nav aria-label="breadcrumb">
     <ol>
         {% set current = "" %}
         {% for level in levels %}

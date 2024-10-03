@@ -16,5 +16,11 @@ taxonomies = [
     { name = "resources", paginate_by = 10 }, # 5 items per page for a term
 ]
 
-[extra]
-# Put all your custom variables here
+[extra.taxonomies.description.resources]
+resources = "Books, guides and tools to help you make the web a better place."
+accessibility = "Articles and tools related to a11y (accessibility)."
+articles = "In-depth tutorials and other long-form articles."
+performance = "Articles and tools relating to web performance."
+privacy = "Articles and tools related to online privacy."
+sustainability = "Articles and tools related to sustainability."
+tools = "Tools and utilities to assist in improving websites."

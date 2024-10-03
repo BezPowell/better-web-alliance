@@ -1,45 +1,30 @@
-{% extends "index.html" %}
-{% block title %}
-<title>{{ term.name | capitalize }}{% if config.title %} | {{ config.title }}{% endif %}</title>
-{% endblock title %}
+{% extends "base.html" %}
 {% block meta %}
-{% set descriptions = load_data(path="content/resources/descriptions.json", format="json") %}
-{% if descriptions[term.name] %}
-<meta name="description" content="{{ descriptions[term.name] }}">
-{% endif %}
+{{ macros::title(title=term.name | capitalize) }}
+<meta name="description" content="{{ macros::taxonomy_description(taxonomy=taxonomy, term=taxonomy) }}" />
 {% endblock meta %}
+
 {% block content %}
-{% set descriptions = load_data(path="content/resources/descriptions.json", format="json") %}
 <h1>{{ term.name | capitalize }}</h1>
-{% if descriptions[term.name] %}
-<p>{{ descriptions[term.name] }}</p>
-{% endif %}
-<ul class="gallery">
-    {% for item in paginator.pages | sort(attribute="title") %}
-    <li class="gallery-item card">
-        {% if item.extra.canonical %}
-        <h2 class="item-heading">
-            <a href="{{item.extra.canonical}}">{{ item.title }}</a>
-        </h2>
-        {% else %}
-        <h2 class="item-heading">{{ item.title }}</h2>
-        {% endif %}
-        <div class="card-body">
-            {% if item.taxonomies["resources"] %}
-            <div class="meta">
-                Categories:
-                {% for category in item.taxonomies["resources"] %}
-                <a href="{{ get_taxonomy_url(kind="resources", name=category) | safe }}">
-                    {{ category }}
-                </a>
-                {%- if not loop.last -%}, {% endif -%}
-                {% endfor %}
+<p>{{ macros::taxonomy_description(taxonomy=taxonomy, term=term) }}</p>
+<ul class="grid">
+    {% for item in paginator.pages %}
+    <li>
+        <article>
+            <header>
+                <h2>
+                    {{ macros::link(href=item.extra.canonical | default(value=item.permalink), text=item.title) }}
+                </h2>
+            </header>
+            <div>
+                <p>{{ item.description }}</p>
             </div>
-            {% endif %}
-            <p>{{ item.description }}</p>
-        </div>
+            <footer>
+                <p>Categories: {{ item.taxonomies[taxonomy.name] | join(sep=", ") }}</p>
+            </footer>
+        </article>
     </li>
     {% endfor %}
 </ul>
-{% include "includes/pagination.html" %}
+{{ macros::pagination(paginator=paginator) }}
 {% endblock content %}

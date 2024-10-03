@@ -1,0 +1,42 @@
+{% import "macros/macros.html" as macros %}
+<!doctype html>
+<html lang="{{ lang }}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{{ get_url(path='css/main.css') }}" />
+
+    {% block meta %}
+    <title>{{ config.title }}</title>
+    {% endblock meta %}
+</head>
+
+<body>
+    <a href="#content" class="skip-link">Skip to Content</a>
+    <header class="container-fluid">
+        {% include "includes/nav.html" %}
+    </header>
+    <main class="container" id="content">
+        {% include "includes/breadcrumbs.html" %}
+        {% block content %}{% endblock content %}
+    </main>
+    <footer class="container-fluid">
+        <nav aria-label="secondary">
+            <ul>
+                <li>
+                    {{ macros::link(href=get_url(path="sitemap.xml"), text="Sitemap") }}
+                </li>
+                <li>
+                    {{ macros::link(href="https://github.com/BezPowell/better-web-alliance", text="Git Repository") }}
+                </li>
+                <li></li>
+                    {{ macros::link(href="/privacy", text="Privacy Policy") }}
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

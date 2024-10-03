@@ -1,19 +1,23 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% block content %}
-    {% if this.extra.url %}
-        <h1><a href="{{ this.extra.url }}">{{ this.title }}</a></h1>
-    {% else %}
-        <h1>{{ this.title }}</h1>
-    {% endif %}
-    {% if this.content %}
-        {{ this.content | safe }}
-    {% endif %}
+<h1>
+    {%- if page.extra.url -%}
+    {{ macros::link(href=page.extra.url, text=page.title) }}
+    {%- else -%}
+    {{ page.title }}
+    {%- endif -%}
+</h1>
+{% if page.content %}
+{{ page.content | safe }}
+{% endif %}
 
-    <h2>Site Scores</h2>
-    <table class="responsive-table">
+<h2>Site Scores</h2>
+<div class="overflow-auto">
+    <table>
         <thead>
             <tr>
-                <th scope="col"><a href="https://developers.google.com/speed/pagespeed/insights/">Pagespeed Insights</a></th>
+                <th scope="col"><a href="https://developers.google.com/speed/pagespeed/insights/">Pagespeed Insights</a>
+                </th>
                 <th scope="col"><a href="https://www.websitecarbon.com/">Website Carbon Calculator</a></th>
                 <th scope="col"><a href="https://wave.webaim.org/">WAVE</a></th>
                 <th scope="col"><a href="https://themarkup.org/blacklight">Blacklight</a></th>
@@ -21,56 +25,78 @@
         </thead>
         <tbody>
             <tr>
-                <td data-title="Pagespeed Insights">Mobile: {{ this.extra.pagespeed.mobile }}. Desktop: {{ this.extra.pagespeed.desktop }}.</td>
-                <td data-title="Website Carbon Calculator">{{ this.extra.carbon.grams }}g</td>
-                <td data-title="WAVE">Errors: {{ this.extra.wave.errors }}. Alerts: {{ this.extra.wave.alerts }}.</td>
-                <td data-title="Blacklight">{{ this.extra.blacklight.short }}</td>
+                <td>Mobile: {{ page.extra.pagespeed.mobile }}. Desktop: {{
+                    page.extra.pagespeed.desktop }}.</td>
+                <td>{{ page.extra.carbon.grams }}g</td>
+                <td>Errors: {{ page.extra.wave.errors }}. Alerts: {{ page.extra.wave.alerts }}.</td>
+                <td>{{ page.extra.blacklight.short }}</td>
             </tr>
         </tbody>
     </table>
-    <details>
-        <summary>How these scores are calculated</summary>
-        <p>The website homepage, and one other randomly selected page, are tested using a series of automated tools and the results aggregated. None of these tools can be considered 100% accurate, and may report some false negatives and positives. However, they do provide a good objective indication of website performance without the need for a manual audit.</p>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Tool</th>
-                        <th scope="col">Checks</th>
-                        <th scope="col">Aggregation Method</th>
-                        <th scope="col">Scoring</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row"><a href="https://developers.google.com/speed/pagespeed/insights/">Pagespeed Insights</a></th>
-                        <td>Page load speed on mobile and desktop.</td>
-                        <td>Mean of results.</td>
-                        <td>0 - 100. Higher is better.</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><a href="https://www.websitecarbon.com/">Website Carbon Calculator</a></th>
-                        <td>Carbon emitted from viewing page.</td>
-                        <td>Mean of results.</td>
-                        <td>Grams of CO<sub>2</sub>. Lower is better.</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><a href="https://wave.webaim.org/">WAVE</a></th>
-                        <td>Compliance with Web Content Accessibility Guidelines (WCAG).</td>
-                        <td>Worst individual score.</td>
-                        <td>Number of Errors and Alerts (potential problems). Lower is better.</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><a href="https://themarkup.org/blacklight">Blacklight</a></th>
-                        <td>Presence of user tracking technologies on page.</td>
-                        <td>Single score, as it automatically checks multiple pages.</td>
-                        <td>In-depth text summary of any trackers found.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-      </details>
+</div>
+<details>
+    <summary>How these scores are calculated</summary>
+    <p>The website homepage, and one other randomly selected page, are tested using a series of automated tools and the
+        results aggregated. None of these tools can be considered 100% accurate, and may report some false negatives and
+        positives. However, they do provide a good objective indication of website performance without the need for a
+        manual audit.</p>
+    <div class="overflow-auto">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Tool</th>
+                    <th scope="col">Checks</th>
+                    <th scope="col">Aggregation Method</th>
+                    <th scope="col">Scoring</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        <a href="https://developers.google.com/speed/pagespeed/insights/">
+                            Pagespeed Insights
+                        </a>
+                    </th>
+                    <td>Page load speed on mobile and desktop.</td>
+                    <td>Mean of results.</td>
+                    <td>0 - 100. Higher is better.</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <a href="https://www.websitecarbon.com/">
+                            Website Carbon Calculator
+                        </a>
+                    </th>
+                    <td>Carbon emitted from viewing page.</td>
+                    <td>Mean of results.</td>
+                    <td>Grams of CO<sub>2</sub>. Lower is better.</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <a href="https://wave.webaim.org/">
+                            WAVE
+                        </a>
+                    </th>
+                    <td>Compliance with Web Content Accessibility Guidelines (WCAG).</td>
+                    <td>Worst individual score.</td>
+                    <td>Number of Errors and Alerts (potential problems). Lower is better.</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <a href="https://themarkup.org/blacklight">
+                            Blacklight
+                        </a>
+                    </th>
+                    <td>Presence of user tracking technologies on page.</td>
+                    <td>Single score, as it automatically checks multiple pages.</td>
+                    <td>In-depth text summary of any trackers found.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</details>
 
-    <h2>Updated</h2>
-    <p>This page was last updated on <time datetime="{{this.updated | default(value=this.date)}}">{{this.updated | default(value=this.date)}}</time></p>
+<h2>Updated</h2>
+<p>This page was last updated on <time datetime="{{page.updated | default(value=page.date)}}">{{page.updated |
+        default(value=page.date)}}</time></p>
 {% endblock content %}

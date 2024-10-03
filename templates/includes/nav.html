@@ -1,18 +1,15 @@
-{# get root node to generate menu #}
-{% set root = get_section(path="_index.md") %}
-  <ul class="main-menu">
-    {# generate links for sections #}
-    {% set resources = get_taxonomy(kind="resources") %}
-    {{ macros::nav_link(url="/" ~ resources.kind.name ~ "/", name=resources.kind.name | capitalize) }}
-
-    {% for link in root.subsections %}
-      {% set item = get_section(path=link, metadata_only=true) %}
-      {{ macros::nav_link(url=item.permalink, name=item.title) }}
-    {% endfor %}
-
-    {# generate links for pages #}
-    {% for item in root.pages | reverse %}
-      {% if item.extra.exclude_nav %}{% continue %}{% endif %}
-      {{ macros::nav_link(url=item.permalink, name=item.title) }}
-    {% endfor %}
+{%- set links = load_data(path="primary-navigation.json") -%}
+<nav aria-label="primary">
+  <ul>
+    <li>
+      {{ macros::link(href=config.base_url, text=config.title) }}
+    </li>
   </ul>
+  <ul>
+    {%- for link in links -%}
+    <li>
+      {{ macros::link(href=config.base_url ~ link.href, text=link.title) }}
+    </li>
+    {%- endfor -%}
+  </ul>
+</nav>

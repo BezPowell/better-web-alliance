@@ -1,5 +1,5 @@
 +++
-title = "Home"
+title = "The Better Web Alliance"
 description = "The Better Web Alliance is a voluntary collective of websites and web developers aiming to make the world wide web a better place by putting users first."
 +++
 
