@@ -72,3 +72,23 @@
 </nav>
 {%- endif -%}
 {%- endmacro pagination -%}
+
+{% macro breadcrumbs(path) %}
+{% set levels = path | split(pat="/") | slice(end=-1) %}
+<nav aria-label="breadcrumb">
+    <ol>
+        {% set current = "" %}
+        {% for level in levels %}
+        {% set_global current = current ~ level ~ "/" %}
+        {% if level == "" %}
+        {% set name = "home" %}
+        {% else %}
+        {% set name = level %}
+        {% endif %}
+        <li>
+            <a href="{{ current }}" {% if loop.last %}aria-current="location" {% endif %}>{{ name }}</a>
+        </li>
+        {% endfor %}
+    </ol>
+</nav>
+{% endmacro breadcrumbs %}

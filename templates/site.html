@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{{ macros::breadcrumbs(path=page.path) }}
 <h1>
     {%- if page.extra.url -%}
     {{ macros::link(href=page.extra.url, text=page.title) }}

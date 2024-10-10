@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{{ macros::breadcrumbs(path=section.path) }}
 {{ section.content | safe }}
 <ul>
     {% for page in paginator.pages %}

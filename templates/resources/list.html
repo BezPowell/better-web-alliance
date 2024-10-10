@@ -5,6 +5,7 @@
 {% endblock meta %}
 
 {% block content %}
+{{ macros::breadcrumbs(path=current_path) }}
 <h1>{{ taxonomy.name | capitalize }}</h1>
 <p>{{ macros::taxonomy_description(taxonomy=taxonomy, term=taxonomy) }}</p>
 <ul class="grid">
